@@ -6,7 +6,6 @@ session = boto3.Session(region_name='us-east-1')
 ec2 = session.client('ec2')
 
 result = []
-# response = ec2.describe_instances(InstanceIds=["i-0cb69169b64fb1843", "i-029550cf92e933e48"]).get('Reservations')
 response = ec2.describe_instances().get('Reservations')
 # print(response)
 for item in response:
